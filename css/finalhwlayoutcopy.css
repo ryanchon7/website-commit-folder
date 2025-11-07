@@ -1,0 +1,278 @@
+/* ------------- Typography: EB Garamond (Google Fonts) ------------- */
+/* If you can't add a <link> tag in HTML, you can keep this @import.
+   Otherwise use:
+   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet"> */
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap");
+
+/* ------------- Design Tokens ------------- */
+:root {
+  --bg: #f6f7fb;
+  --panel: #ffffff;
+  --text: #2b2b2b;
+  --muted: #6a6a6a;
+
+  --brand: #3caca3; /* refined deep green */
+  --brand-600: #3caca3;
+  --brand-200: #cfe9d4;
+
+  --border: #e5e7eb;
+  --shadow: 0 6px 18px rgba(105, 155, 19, 0.08);
+  --radius: 12px;
+}
+
+/* ------------- Reset / Base ------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "EB Garamond", Garamond, "Times New Roman", serif;
+  font-weight: 400;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.62;
+}
+
+/* Provide consistent inner gutters across sections */
+header,
+nav,
+main,
+section,
+article,
+aside,
+footer {
+  padding: 20px;
+}
+
+/* ------------- Header ------------- */
+header {
+  background: linear-gradient(135deg, var(--brand) 0%, #42bdb3 100%);
+  color: #fff;
+  text-align: center;
+  padding: 48px 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+header h1,
+header h2 {
+  letter-spacing: 0.3px;
+  font-weight: 600;
+}
+
+/* ------------- Navigation ------------- */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #ffffffcc; /* translucent white */
+  backdrop-filter: saturate(160%) blur(8px);
+  padding: 14px 20px;
+  margin-top: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--brand);
+  background: var(--brand-200);
+}
+
+/* ------------- Main / Layout ------------- */
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Only apply grid layout on pages that have a sidebar */
+main.with-sidebar {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+}
+
+/* Content panels */
+section,
+aside {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Section (primary content) */
+section {
+  padding: auto;
+}
+
+article {
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed #e9ecef;
+}
+
+article:last-child {
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+article h2 {
+  font-weight: 600;
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+  color: var(--brand-600);
+  letter-spacing: 0.2px;
+}
+
+/* ------------- Footer ------------- */
+footer {
+  background: #50351d82;
+  color: #f5f5f5;
+  text-align: center;
+  padding: 22px;
+  margin-top: 28px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  letter-spacing: 0.3px;
+  font-weight: 500;
+}
+
+/* ------------- Utilities / Typography ------------- */
+p {
+  color: var(--text);
+}
+small,
+.muted {
+  color: var(--muted);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "EB Garamond", Garamond, serif;
+  letter-spacing: 0.3px;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+h2 {
+  font-size: 1.6rem;
+}
+h3 {
+  font-size: 1.3rem;
+}
+
+a {
+  transition: opacity 0.2s ease;
+}
+a:active {
+  opacity: 0.85;
+}
+
+#menus {
+  align-items: stretch;
+  width: 100%;
+}
+#menus > div article {
+  height: 95%;
+  margin-bottom: 20px;
+  position: relative;
+  padding: 16px;
+}
+#menus h2 {
+  position: center;
+  right: 5%;
+  bottom: 10px;
+  color: #529893;
+  margin-bottom: 0.5rem;
+}
+#menu1,
+#menu2,
+#menu3,
+#menu4,
+#menu5 {
+  width: 100%;
+}
+#menu1 {
+  background: url() no-repeat center/cover;
+}
+#menu2 {
+  background: url() no-repeat center/cover;
+}
+#menu3 {
+  background: url() no-repeat center/cover;
+}
+#menu4 {
+  background: url() no-repeat center/cover;
+}
+#menu5 {
+  background: url() no-repeat center/cover;
+}
+/* ------------- Responsiveness ------------- */
+@media (max-width: 980px) {
+  main {
+    grid-template-columns: 1fr; /* stack content and sidebar */
+  }
+}
+
+@media (max-width: 640px) {
+  header {
+    padding: 36px 18px;
+  }
+  nav ul {
+    gap: 18px;
+  }
+  main {
+    padding: 22px 16px;
+  }
+  section,
+  aside {
+    padding: 18px;
+  }
+}
+
+/* 태블릿 */
+@media (max-width: 1023px) {
+  #menus {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  #menu1,
+  #menu2,
+  #menu3,
+  #menu4 {
+    width: 49%;
+  }
+}
